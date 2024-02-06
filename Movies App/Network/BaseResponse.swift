@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol BaseResponse where Self: Decodable {
+    var error: String? { get set }
+    var response: String? { get set }
+}
