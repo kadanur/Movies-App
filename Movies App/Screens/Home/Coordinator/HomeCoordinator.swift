@@ -23,4 +23,10 @@ final class HomeCoordinator: Coordinator {
         
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToMovieDetail() {
+        let coordinator = MovieDetailCoordinator(navigationController: navigationController)
+        addChild(coordinator: coordinator)
+        coordinator.start()
+    }
 }

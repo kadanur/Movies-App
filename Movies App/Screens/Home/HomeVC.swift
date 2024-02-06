@@ -26,7 +26,10 @@ final class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Home"
+        
         setupSearchController()
+        registerCells()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +40,11 @@ final class HomeVC: BaseVC {
 }
 
 private extension HomeVC {
+    
+    func registerCells() {
+        let nib = UINib(nibName: "MovieCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "MovieCell")
+    }
     
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
@@ -59,6 +67,10 @@ private extension HomeVC {
         tableView.reloadData()
     }
     
+    func didTapMovie(_ movie: SearchResult) {
+        coordinator?.navigateToMovieDetail()
+    }
+    
     @objc func textDidChange() {
         guard let searchText = navigationItem.searchController?.searchBar.text else { return }
         viewModel?.handleVMInput(.searchBarTextDidChange(searchText: searchText))
@@ -77,20 +89,25 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
         
         switch state {
         case let .info(info):
+            let cell = UITableViewCell()
             cell.textLabel?.text = "\(info)"
+            cell.selectionStyle = .none
+            return cell
         case .list:
-            cell.textLabel?.text = "\(movies[indexPath.row].title)"
+            guard let cell = tableView
+                .dequeueReusableCell(withIdentifier: "MovieCell") as? MovieCell else { return .init() }
+            cell.selectionStyle = .none
+            cell.movie = movies[indexPath.row]
+            
+            cell.onTapAction = { [weak self] movie in
+                self?.didTapMovie(movie)
+            }
+            
+            return cell
         }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard case .list = state else { return }
     }
 }
 
