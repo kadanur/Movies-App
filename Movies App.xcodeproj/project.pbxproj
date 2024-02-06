@@ -40,6 +40,14 @@
 		BA585EDC2B719456009915C9 /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDB2B719456009915C9 /* SplashVM.swift */; };
 		BA585EDE2B71945F009915C9 /* SplashVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */; };
 		BA585EE12B723046009915C9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EE02B723046009915C9 /* BaseVC.swift */; };
+		BA585EE42B723729009915C9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EE32B723729009915C9 /* NetworkManager.swift */; };
+		BA585EE62B72375C009915C9 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EE52B72375C009915C9 /* Endpoints.swift */; };
+		BA585EE92B72384E009915C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BA585EE82B72384E009915C9 /* Alamofire */; };
+		BA585EEC2B725482009915C9 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA585EEB2B725482009915C9 /* HomeVC.xib */; };
+		BA585EEE2B725489009915C9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EED2B725489009915C9 /* HomeVC.swift */; };
+		BA585EF12B725539009915C9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EF02B725539009915C9 /* HomeCoordinator.swift */; };
+		BA585EF62B726A5C009915C9 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EF52B726A5C009915C9 /* SearchResponse.swift */; };
+		BA585EF92B727719009915C9 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = BA585EF82B727719009915C9 /* netfox */; };
 		BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A392B7174BE00769ADF /* AppDelegate.swift */; };
 		BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */; };
 		BA622A432B7174BF00769ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA622A422B7174BF00769ADF /* Assets.xcassets */; };
@@ -60,6 +68,12 @@
 		BA585EDB2B719456009915C9 /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVMProtocols.swift; sourceTree = "<group>"; };
 		BA585EE02B723046009915C9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		BA585EE32B723729009915C9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BA585EE52B72375C009915C9 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		BA585EEB2B725482009915C9 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		BA585EED2B725489009915C9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BA585EF02B725539009915C9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		BA585EF52B726A5C009915C9 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		BA622A362B7174BE00769ADF /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA622A392B7174BE00769ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +113,9 @@
 				BA585EB12B718756009915C9 /* FirebaseCrashlytics in Frameworks */,
 				BA585EC72B718756009915C9 /* FirebaseInstallations in Frameworks */,
 				BA585ECF2B718756009915C9 /* FirebaseRemoteConfig in Frameworks */,
+				BA585EF92B727719009915C9 /* netfox in Frameworks */,
 				BA585ED32B718756009915C9 /* FirebaseStorage in Frameworks */,
+				BA585EE92B72384E009915C9 /* Alamofire in Frameworks */,
 				BA585EB32B718756009915C9 /* FirebaseDatabase in Frameworks */,
 				BA585ED52B718756009915C9 /* FirebaseStorageCombine-Community in Frameworks */,
 				BA622A622B717F7C00769ADF /* Reachability in Frameworks */,
@@ -130,6 +146,57 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		BA585EE22B72371C009915C9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BA585EE52B72375C009915C9 /* Endpoints.swift */,
+				BA585EE32B723729009915C9 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BA585EEA2B725474009915C9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA585EEF2B725531009915C9 /* Coordinator */,
+				BA585EF22B726176009915C9 /* Repository */,
+				BA585EF32B72617F009915C9 /* ViewModel */,
+				BA585EEB2B725482009915C9 /* HomeVC.xib */,
+				BA585EED2B725489009915C9 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA585EEF2B725531009915C9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BA585EF02B725539009915C9 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BA585EF22B726176009915C9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		BA585EF32B72617F009915C9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA585EF42B726A4B009915C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA585EF52B726A5C009915C9 /* SearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BA622A2D2B7174BE00769ADF = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +222,8 @@
 				BA622A5A2B717B2800769ADF /* Extensions */,
 				BA622A502B7179FE00769ADF /* Helpers */,
 				BA622A4E2B7178E300769ADF /* Modules */,
+				BA585EF42B726A4B009915C9 /* Models */,
+				BA585EE22B72371C009915C9 /* Network */,
 				BA622A4F2B71790900769ADF /* Resources */,
 			);
 			path = "Movies App";
@@ -163,11 +232,11 @@
 		BA622A4D2B7178D700769ADF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BA585ED82B719390009915C9 /* AppContainer.swift */,
+				BA622A532B717A8E00769ADF /* AppCoordinator.swift */,
 				BA622A392B7174BE00769ADF /* AppDelegate.swift */,
 				BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */,
 				BA622A472B7174BF00769ADF /* Info.plist */,
-				BA622A532B717A8E00769ADF /* AppCoordinator.swift */,
-				BA585ED82B719390009915C9 /* AppContainer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -176,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				BA622A552B717AC400769ADF /* Splash */,
+				BA585EEA2B725474009915C9 /* Home */,
 				BA622A442B7174BF00769ADF /* LaunchScreen.storyboard */,
 			);
 			path = Modules;
@@ -270,6 +340,8 @@
 				BA585ED02B718756009915C9 /* FirebaseRemoteConfigSwift */,
 				BA585ED22B718756009915C9 /* FirebaseStorage */,
 				BA585ED42B718756009915C9 /* FirebaseStorageCombine-Community */,
+				BA585EE82B72384E009915C9 /* Alamofire */,
+				BA585EF82B727719009915C9 /* netfox */,
 			);
 			productName = "Movies App";
 			productReference = BA622A362B7174BE00769ADF /* Movies App.app */;
@@ -302,6 +374,8 @@
 			packageReferences = (
 				BA622A602B717F7C00769ADF /* XCRemoteSwiftPackageReference "Reachability" */,
 				BA585E9F2B718756009915C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BA585EE72B72384E009915C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BA585EF72B727719009915C9 /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			productRefGroup = BA622A372B7174BE00769ADF /* Products */;
 			projectDirPath = "";
@@ -319,6 +393,7 @@
 			files = (
 				BA622A592B717B0100769ADF /* SplashVC.xib in Resources */,
 				BA585E912B718341009915C9 /* GoogleService-Info.plist in Resources */,
+				BA585EEC2B725482009915C9 /* HomeVC.xib in Resources */,
 				BA622A462B7174BF00769ADF /* LaunchScreen.storyboard in Resources */,
 				BA622A432B7174BF00769ADF /* Assets.xcassets in Resources */,
 			);
@@ -334,13 +409,18 @@
 				BA622A5C2B717B3800769ADF /* UIViewController+Extension.swift in Sources */,
 				BA585EDC2B719456009915C9 /* SplashVM.swift in Sources */,
 				BA622A542B717A8E00769ADF /* AppCoordinator.swift in Sources */,
+				BA585EE42B723729009915C9 /* NetworkManager.swift in Sources */,
 				BA585ED92B719390009915C9 /* AppContainer.swift in Sources */,
 				BA622A572B717AD400769ADF /* SplashVC.swift in Sources */,
+				BA585EEE2B725489009915C9 /* HomeVC.swift in Sources */,
 				BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */,
 				BA622A5F2B717C8900769ADF /* SplashCoordinator.swift in Sources */,
 				BA585EE12B723046009915C9 /* BaseVC.swift in Sources */,
 				BA585EDE2B71945F009915C9 /* SplashVMProtocols.swift in Sources */,
+				BA585EE62B72375C009915C9 /* Endpoints.swift in Sources */,
+				BA585EF62B726A5C009915C9 /* SearchResponse.swift in Sources */,
 				BA585E9E2B7184BF009915C9 /* RemoteConfigHelper.swift in Sources */,
+				BA585EF12B725539009915C9 /* HomeCoordinator.swift in Sources */,
 				BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */,
 				BA622A522B717A0B00769ADF /* Coordinator.swift in Sources */,
 			);
@@ -573,6 +653,22 @@
 				minimumVersion = 10.20.0;
 			};
 		};
+		BA585EE72B72384E009915C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		BA585EF72B727719009915C9 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
 		BA622A602B717F7C00769ADF /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
@@ -718,6 +814,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BA585E9F2B718756009915C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		BA585EE82B72384E009915C9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA585EE72B72384E009915C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BA585EF82B727719009915C9 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA585EF72B727719009915C9 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
 		};
 		BA622A612B717F7C00769ADF /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;

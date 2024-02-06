@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
       "identity" : "app-check",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/app-check.git",
@@ -97,6 +106,15 @@
       "state" : {
         "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
         "version" : "2.30909.0"
+      }
+    },
+    {
+      "identity" : "netfox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kasketis/netfox",
+      "state" : {
+        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
+        "version" : "1.21.0"
       }
     },
     {

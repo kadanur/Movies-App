@@ -62,7 +62,7 @@ extension SplashVC: SplashVMDelegate {
         case let .updateSplashTitle(text):
             titleLabel.text = text
         case .navigateToHome:
-            coordinator?.start()
+            coordinator?.navigateToHome()
         case let .presentError(error):
             presentErrorAlert(error)
         case let .showLoading(state):

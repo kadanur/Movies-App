@@ -1,13 +1,13 @@
 //
-//  SplashCoordinator.swift
+//  HomeCoordinator.swift
 //  Movies App
 //
-//  Created by M Kaan Adanur on 5.02.2024.
+//  Created by M Kaan Adanur on 6.02.2024.
 //
 
 import UIKit
 
-final class SplashCoordinator: Coordinator {
+final class HomeCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
@@ -17,16 +17,9 @@ final class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        let vc: SplashVC = .instantiate()
+        let vc: HomeVC = .instantiate()
         vc.coordinator = self
-        vc.viewModel = SplashVM()
         
         navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToHome() {
-        let coordinator = HomeCoordinator(navigationController: navigationController)
-        addChild(coordinator: coordinator)
-        coordinator.start()
     }
 }

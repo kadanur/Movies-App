@@ -8,3 +8,4 @@
 import Foundation
 
 let remoteConfig: RemoteConfigHelperProtocol = RemoteConfigHelper()
+let networkManager: NetworkManagerProtocol = NetworkManager()
