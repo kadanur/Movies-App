@@ -7,8 +7,6 @@
 
 import Foundation
 
-private let apiKey = "fc3ede5e" // TODO: Kaan plist
-
 protocol EndpointProtocol {
     var baseUrl: String { get }
     var queryItems: [URLQueryItem] { get }
@@ -16,25 +14,32 @@ protocol EndpointProtocol {
     var request: URLRequest { get }
 }
 
-enum EndPoint {
+enum Endpoint {
     case searchMovie(searchText: String)
     case getMovie(imdbId: String)
 }
 
-extension EndPoint: EndpointProtocol {
+extension Endpoint: EndpointProtocol {
+    
+    private enum QueryKeys: String {
+        case apiKey = "apikey"
+        case search = "s"
+        case imdbId = "i"
+    }
     
     var baseUrl: String {
         return "http://www.omdbapi.com"
     }
     
     var queryItems: [URLQueryItem] {
-        var items: [URLQueryItem] = [.init(name: "apikey", value: apiKey)]
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "ApiKey") as? String else { return [] }
+        var items: [URLQueryItem] = [.init(name: QueryKeys.apiKey.rawValue, value: apiKey)]
         
         switch self {
         case let .searchMovie(searchText):
-            items.append(.init(name: "s", value: searchText))
+            items.append(.init(name: QueryKeys.search.rawValue, value: searchText))
         case let .getMovie(imbdId):
-            items.append(.init(name: "i", value: imbdId))
+            items.append(.init(name: QueryKeys.imdbId.rawValue, value: imbdId))
         }
         
         return items
@@ -46,13 +51,14 @@ extension EndPoint: EndpointProtocol {
     
     var request: URLRequest {
         guard var component = URLComponents(string: baseUrl) else {
-            fatalError("URLComponents could not init") // TODO: Kaan
+            fatalError("URLComponents could not init")
         }
         
         component.queryItems = queryItems
     
-        var request = URLRequest(url: component.url!) // TODO: Kaan force
+        var request = URLRequest(url: component.url!)
         request.httpMethod = method.rawValue
+        
         return request
     }
 }

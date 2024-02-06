@@ -20,7 +20,7 @@ final class HomeRepository: HomeRepositoryProtocol {
         searchText title: String,
         completion: @escaping (Result<SearchResponse, Error>) -> Void
     ) {
-        let endpoint = EndPoint.searchMovie(searchText: title)
+        let endpoint = Endpoint.searchMovie(searchText: title)
         return networkManager.request(endpoint, completion: completion)
     }
 }

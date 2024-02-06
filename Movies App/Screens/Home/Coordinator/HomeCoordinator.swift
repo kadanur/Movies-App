@@ -20,8 +20,10 @@ final class HomeCoordinator: Coordinator {
         let vc: HomeVC = .instantiate()
         vc.coordinator = self
         vc.viewModel = HomeVM(repository: HomeRepository())
+        vc.isBackButtonHide = true
         
         navigationController.pushViewController(vc, animated: true)
+        navigationController.viewControllers.removeAll(where: { !($0 is HomeVC) })
     }
     
     func navigateToMovieDetail(imdbId: String?) {

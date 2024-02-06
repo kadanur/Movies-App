@@ -20,7 +20,7 @@ final class MovieDetailRepository: MovieDetailRepositoryProtocol {
         imdbId: String,
         completion: @escaping (Result<MovieDetail, Error>) -> Void
     ) {
-        let endpoint = EndPoint.getMovie(imdbId: imdbId)
+        let endpoint = Endpoint.getMovie(imdbId: imdbId)
         return networkManager.request(endpoint, completion: completion)
     }
 }

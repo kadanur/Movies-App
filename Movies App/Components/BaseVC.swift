@@ -12,6 +12,14 @@ class BaseVC: UIViewController {
     private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     private var transparentView: UIView?
     
+    var isBackButtonHide: Bool = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationItem.setHidesBackButton(isBackButtonHide, animated: true)
+    }
+    
     func presentErrorAlert(message: String, isPop: Bool = false) {
         let alertController = UIAlertController(
             title: "Error",
@@ -39,8 +47,6 @@ class BaseVC: UIViewController {
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = .large
-        
-        
         activityIndicator.startAnimating()
         
         transparentView = UIView(frame: .init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
@@ -56,7 +62,6 @@ class BaseVC: UIViewController {
     
     func activityIndicatorEnd() {
         self.activityIndicator.stopAnimating()
-
         self.transparentView?.removeFromSuperview()
     }
 }

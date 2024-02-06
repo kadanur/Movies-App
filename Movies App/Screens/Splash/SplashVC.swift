@@ -11,9 +11,9 @@ import UIKit
 final class SplashVC: BaseVC {
     
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var activityIndicatior: UIActivityIndicatorView!
     
     private let reachability = try? Reachability()
-    private var isInternetConnectionReachable = false
     
     weak var coordinator: SplashCoordinator?
     var viewModel: SplashVMProtocol? {
@@ -26,7 +26,6 @@ final class SplashVC: BaseVC {
         super.viewDidLoad()
         
         setupReachability()
-        viewModel?.handleVMInput(.load)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,11 +45,12 @@ private extension SplashVC {
     
     func setupReachability() {
         reachability?.whenReachable = { [weak self] _ in
-            self?.isInternetConnectionReachable = true
+            self?.titleLabel.text = ""
+            self?.viewModel?.handleVMInput(.load)
         }
         
         reachability?.whenUnreachable = { [weak self] _ in
-            self?.isInternetConnectionReachable = false
+            self?.titleLabel.text = "Please check your internet connection"
         }
     }
 }
@@ -66,7 +66,7 @@ extension SplashVC: SplashVMDelegate {
         case let .presentError(message):
             presentErrorAlert(message: message)
         case let .showLoading(state):
-            showLoading(state)
+            state ? activityIndicatior.startAnimating() : activityIndicatior.stopAnimating()
         }
     }
 }

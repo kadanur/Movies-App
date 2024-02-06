@@ -62,6 +62,7 @@
 		BA585F1D2B72E029009915C9 /* MovieDetailVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585F1C2B72E029009915C9 /* MovieDetailVMProtocols.swift */; };
 		BA585F1F2B72E086009915C9 /* MovieDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585F1E2B72E086009915C9 /* MovieDetailVM.swift */; };
 		BA585F212B72E64B009915C9 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585F202B72E64B009915C9 /* MovieDetail.swift */; };
+		BA585F232B72F72C009915C9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585F222B72F72C009915C9 /* UIColor+Extension.swift */; };
 		BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A392B7174BE00769ADF /* AppDelegate.swift */; };
 		BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */; };
 		BA622A432B7174BF00769ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA622A422B7174BF00769ADF /* Assets.xcassets */; };
@@ -101,6 +102,7 @@
 		BA585F1C2B72E029009915C9 /* MovieDetailVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVMProtocols.swift; sourceTree = "<group>"; };
 		BA585F1E2B72E086009915C9 /* MovieDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVM.swift; sourceTree = "<group>"; };
 		BA585F202B72E64B009915C9 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		BA585F222B72F72C009915C9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BA622A362B7174BE00769ADF /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA622A392B7174BE00769ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				BA622A5B2B717B3800769ADF /* UIViewController+Extension.swift */,
+				BA585F222B72F72C009915C9 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				BA585F1D2B72E029009915C9 /* MovieDetailVMProtocols.swift in Sources */,
 				BA585EE62B72375C009915C9 /* Endpoints.swift in Sources */,
 				BA585EF62B726A5C009915C9 /* SearchResponse.swift in Sources */,
+				BA585F232B72F72C009915C9 /* UIColor+Extension.swift in Sources */,
 				BA585F042B72C20A009915C9 /* MovieCell.swift in Sources */,
 				BA585E9E2B7184BF009915C9 /* RemoteConfigHelper.swift in Sources */,
 				BA585F192B72DF72009915C9 /* MovieDetailRepository.swift in Sources */,

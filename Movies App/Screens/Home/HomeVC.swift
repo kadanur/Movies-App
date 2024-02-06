@@ -95,6 +95,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             let cell = UITableViewCell()
             cell.textLabel?.text = "\(info)"
             cell.selectionStyle = .none
+            cell.backgroundColor = .mainBackgroundColor
             return cell
         case .list:
             guard let cell = tableView
@@ -114,6 +115,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 extension HomeVC: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Delay for search bar
         timer?.invalidate()
         
         timer = Timer.scheduledTimer(

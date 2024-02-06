@@ -17,7 +17,7 @@ enum HttpMethod : String {
 
 protocol NetworkManagerProtocol {
     func request<T: Decodable>(
-        _ endpoint: EndPoint,
+        _ endpoint: Endpoint,
         completion: @escaping (Result<T, Error>) -> Void
     )
 }
@@ -25,7 +25,7 @@ protocol NetworkManagerProtocol {
 final class NetworkManager: NetworkManagerProtocol {
     
     func request<T: Decodable>(
-        _ endpoint: EndPoint ,
+        _ endpoint: Endpoint ,
         completion: @escaping (Result<T, Error>) -> Void) {
             AF.request(endpoint.request)
                 .validate()
