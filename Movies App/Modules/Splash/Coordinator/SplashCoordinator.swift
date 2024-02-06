@@ -19,6 +19,7 @@ final class SplashCoordinator: Coordinator {
     func start() {
         let vc: SplashVC = .instantiate()
         vc.coordinator = self
+        vc.viewModel = SplashVM()
         
         navigationController.pushViewController(vc, animated: true)
     }

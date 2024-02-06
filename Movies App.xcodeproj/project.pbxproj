@@ -39,6 +39,7 @@
 		BA585ED92B719390009915C9 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585ED82B719390009915C9 /* AppContainer.swift */; };
 		BA585EDC2B719456009915C9 /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDB2B719456009915C9 /* SplashVM.swift */; };
 		BA585EDE2B71945F009915C9 /* SplashVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */; };
+		BA585EE12B723046009915C9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EE02B723046009915C9 /* BaseVC.swift */; };
 		BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A392B7174BE00769ADF /* AppDelegate.swift */; };
 		BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */; };
 		BA622A432B7174BF00769ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA622A422B7174BF00769ADF /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		BA585ED82B719390009915C9 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		BA585EDB2B719456009915C9 /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVMProtocols.swift; sourceTree = "<group>"; };
+		BA585EE02B723046009915C9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		BA622A362B7174BE00769ADF /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA622A392B7174BE00769ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BA585EDF2B723035009915C9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BA585EE02B723046009915C9 /* BaseVC.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		BA622A2D2B7174BE00769ADF = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 			children = (
 				BA585E902B718341009915C9 /* GoogleService-Info.plist */,
 				BA622A4D2B7178D700769ADF /* App */,
+				BA585EDF2B723035009915C9 /* Components */,
 				BA622A5A2B717B2800769ADF /* Extensions */,
 				BA622A502B7179FE00769ADF /* Helpers */,
 				BA622A4E2B7178E300769ADF /* Modules */,
@@ -327,6 +338,7 @@
 				BA622A572B717AD400769ADF /* SplashVC.swift in Sources */,
 				BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */,
 				BA622A5F2B717C8900769ADF /* SplashCoordinator.swift in Sources */,
+				BA585EE12B723046009915C9 /* BaseVC.swift in Sources */,
 				BA585EDE2B71945F009915C9 /* SplashVMProtocols.swift in Sources */,
 				BA585E9E2B7184BF009915C9 /* RemoteConfigHelper.swift in Sources */,
 				BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */,

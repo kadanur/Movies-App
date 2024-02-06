@@ -30,12 +30,16 @@ final class RemoteConfigHelper: RemoteConfigHelperProtocol {
             guard let self else { return }
             
             if let error {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 return
             }
             
             remoteConfig.activate { _, _ in
-                completion(.success(true))
+                DispatchQueue.main.async {
+                    completion(.success(true))
+                }
             }
         }
     }

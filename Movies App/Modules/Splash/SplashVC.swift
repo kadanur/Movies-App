@@ -8,9 +8,12 @@
 import Reachability
 import UIKit
 
-final class SplashVC: UIViewController {
+final class SplashVC: BaseVC {
+    
+    @IBOutlet private weak var titleLabel: UILabel!
     
     private let reachability = try? Reachability()
+    private var isInternetConnectionReachable = false
     
     weak var coordinator: SplashCoordinator?
     var viewModel: SplashVMProtocol? {
@@ -23,15 +26,7 @@ final class SplashVC: UIViewController {
         super.viewDidLoad()
         
         setupReachability()
-        
-        remoteConfig.fetchCloudValues { result in
-            switch result {
-            case .success(let success):
-                print("TEST --> \(remoteConfig.getStringValue(forKey: .splashTitle))")
-            case .failure(let failure):
-                print("TEST --> \(failure.localizedDescription)")
-            }
-        }
+        viewModel?.handleVMInput(.load)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,24 +42,31 @@ final class SplashVC: UIViewController {
     }
 }
 
-extension SplashVC: SplashVMDelegate {
+private extension SplashVC {
     
-    func handleVMOutput(_ output: SplashVMOutput) {
-        switch output {
-            
+    func setupReachability() {
+        reachability?.whenReachable = { [weak self] _ in
+            self?.isInternetConnectionReachable = true
+        }
+        
+        reachability?.whenUnreachable = { [weak self] _ in
+            self?.isInternetConnectionReachable = false
         }
     }
 }
 
-private extension SplashVC {
+extension SplashVC: SplashVMDelegate {
     
-    func setupReachability() {
-        reachability?.whenReachable = { _ in
-            print("TEST --> Reachable")
-        }
-        
-        reachability?.whenUnreachable = { _ in
-            print("TEST --> Unreachable")
+    func handleVMOutput(_ output: SplashVMOutput) {
+        switch output {
+        case let .updateSplashTitle(text):
+            titleLabel.text = text
+        case .navigateToHome:
+            coordinator?.start()
+        case let .presentError(error):
+            presentErrorAlert(error)
+        case let .showLoading(state):
+            showLoading(state)
         }
     }
 }
