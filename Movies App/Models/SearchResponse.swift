@@ -16,7 +16,6 @@ struct SearchResponse: BaseResponse, Decodable {
         case results = "Search"
         case error = "Error"
         case response = "Response"
-
     }
 }
 

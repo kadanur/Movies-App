@@ -23,7 +23,6 @@ enum HomeVMInput {
 
 enum HomeVMOutput {
     case updateState(HomeState)
-    case presentErrorAlert(Error)
     case showLoading(Bool)
 }
 

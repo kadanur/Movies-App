@@ -68,7 +68,7 @@ private extension HomeVC {
     }
     
     func didTapMovie(_ movie: SearchResult) {
-        coordinator?.navigateToMovieDetail()
+        coordinator?.navigateToMovieDetail(imdbId: movie.imdbId)
     }
     
     @objc func textDidChange() {
@@ -132,8 +132,6 @@ extension HomeVC: HomeVMDelegate {
         switch output {
         case let .updateState(state):
             updateState(state)
-        case let .presentErrorAlert(error):
-            presentErrorAlert(error)
         case let .showLoading(state):
             showLoading(state)
         }

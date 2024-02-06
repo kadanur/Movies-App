@@ -7,13 +7,11 @@
 
 import UIKit
 
-protocol Coordinator: AnyObject {
+@objc protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
     
-    func start()
-    func addChild(coordinator: Coordinator)
-    func removeChild(coordinator: Coordinator)
+    @objc optional func start()
 }
 
 extension Coordinator {

@@ -33,7 +33,7 @@ private extension SplashVM {
                 updateSplashLabel()
                 navigateToApp()
             case let .failure(error):
-                delegate?.handleVMOutput(.presentError(error))
+                delegate?.handleVMOutput(.presentError(message: error.localizedDescription))
             }
         }
     }

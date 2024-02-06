@@ -24,6 +24,6 @@ enum SplashVMInput {
 enum SplashVMOutput {
     case updateSplashTitle(text: String)
     case navigateToHome
-    case presentError(Error)
+    case presentError(message: String)
     case showLoading(Bool)
 }

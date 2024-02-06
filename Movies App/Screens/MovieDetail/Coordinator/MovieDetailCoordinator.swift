@@ -16,9 +16,10 @@ final class MovieDetailCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(imdbId: String?) {
         let vc: MovieDetailVC = .instantiate()
         vc.coordinator = self
+        vc.viewModel = MovieDetailVM(imdbId: imdbId, repository: MovieDetailRepository())
         
         navigationController.pushViewController(vc, animated: true)
     }
