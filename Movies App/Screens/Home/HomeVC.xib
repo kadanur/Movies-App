@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Movies_App" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="glt-QY-NIk" id="fAd-p7-jOo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="MPc-DU-lri"/>
             </connections>
         </placeholder>
@@ -18,8 +19,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="glt-QY-NIk">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="QYy-ut-6Fx"/>
+                        <outlet property="delegate" destination="-1" id="3hA-En-IXi"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="glt-QY-NIk" secondAttribute="trailing" id="0Kc-4g-CAf"/>
+                <constraint firstItem="glt-QY-NIk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EjA-ac-Brm"/>
+                <constraint firstItem="glt-QY-NIk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hQ9-3i-g1h"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="glt-QY-NIk" secondAttribute="bottom" id="iC3-gd-jGX"/>
+            </constraints>
             <point key="canvasLocation" x="22" y="20"/>
         </view>
     </objects>

@@ -19,6 +19,7 @@ final class HomeCoordinator: Coordinator {
     func start() {
         let vc: HomeVC = .instantiate()
         vc.coordinator = self
+        vc.viewModel = HomeVM(repository: HomeRepository())
         
         navigationController.pushViewController(vc, animated: true)
     }

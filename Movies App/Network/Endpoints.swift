@@ -7,7 +7,7 @@
 
 import Foundation
 
-private let apiKey = "fc3ede5e"
+private let apiKey = "fc3ede5e" // TODO: Kaan plist
 
 protocol EndpointProtocol {
     var baseUrl: String { get }
@@ -21,7 +21,7 @@ enum EndPoint {
     case getMovie(imdbId: String)
 }
 
-extension EndPoint: EndpointProtocol{
+extension EndPoint: EndpointProtocol {
     
     var baseUrl: String {
         return "http://www.omdbapi.com"
@@ -45,13 +45,13 @@ extension EndPoint: EndpointProtocol{
     }
     
     var request: URLRequest {
-        guard var component = URLComponents(string: baseUrl) else{
-            fatalError("URLComponents could not init")
+        guard var component = URLComponents(string: baseUrl) else {
+            fatalError("URLComponents could not init") // TODO: Kaan
         }
         
         component.queryItems = queryItems
     
-        var request = URLRequest(url: component.url!)
+        var request = URLRequest(url: component.url!) // TODO: Kaan force
         request.httpMethod = method.rawValue
         return request
     }

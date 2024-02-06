@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct SearchResponse: Decodable {
+struct SearchResponse: BaseResponse, Decodable {
     let results: [SearchResult]?
+    var error: String?
+    var response: String?
     
     enum CodingKeys: String, CodingKey {
         case results = "Search"
+        case error = "Error"
+        case response = "Response"
+
     }
 }
 

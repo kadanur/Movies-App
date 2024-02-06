@@ -48,6 +48,10 @@
 		BA585EF12B725539009915C9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EF02B725539009915C9 /* HomeCoordinator.swift */; };
 		BA585EF62B726A5C009915C9 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EF52B726A5C009915C9 /* SearchResponse.swift */; };
 		BA585EF92B727719009915C9 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = BA585EF82B727719009915C9 /* netfox */; };
+		BA585EFB2B728940009915C9 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EFA2B728940009915C9 /* HomeRepository.swift */; };
+		BA585EFD2B728A61009915C9 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EFC2B728A61009915C9 /* HomeVM.swift */; };
+		BA585EFF2B728A68009915C9 /* HomeVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EFE2B728A68009915C9 /* HomeVMProtocols.swift */; };
+		BA585F012B72C150009915C9 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585F002B72C150009915C9 /* BaseResponse.swift */; };
 		BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A392B7174BE00769ADF /* AppDelegate.swift */; };
 		BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */; };
 		BA622A432B7174BF00769ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA622A422B7174BF00769ADF /* Assets.xcassets */; };
@@ -74,6 +78,10 @@
 		BA585EED2B725489009915C9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BA585EF02B725539009915C9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		BA585EF52B726A5C009915C9 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		BA585EFA2B728940009915C9 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		BA585EFC2B728A61009915C9 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		BA585EFE2B728A68009915C9 /* HomeVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVMProtocols.swift; sourceTree = "<group>"; };
+		BA585F002B72C150009915C9 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		BA622A362B7174BE00769ADF /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA622A392B7174BE00769ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 			children = (
 				BA585EE52B72375C009915C9 /* Endpoints.swift */,
 				BA585EE32B723729009915C9 /* NetworkManager.swift */,
+				BA585F002B72C150009915C9 /* BaseResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 		BA585EF22B726176009915C9 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				BA585EFA2B728940009915C9 /* HomeRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -185,6 +195,8 @@
 		BA585EF32B72617F009915C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BA585EFC2B728A61009915C9 /* HomeVM.swift */,
+				BA585EFE2B728A68009915C9 /* HomeVMProtocols.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,7 +233,7 @@
 				BA585EDF2B723035009915C9 /* Components */,
 				BA622A5A2B717B2800769ADF /* Extensions */,
 				BA622A502B7179FE00769ADF /* Helpers */,
-				BA622A4E2B7178E300769ADF /* Modules */,
+				BA622A4E2B7178E300769ADF /* Screens */,
 				BA585EF42B726A4B009915C9 /* Models */,
 				BA585EE22B72371C009915C9 /* Network */,
 				BA622A4F2B71790900769ADF /* Resources */,
@@ -241,14 +253,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		BA622A4E2B7178E300769ADF /* Modules */ = {
+		BA622A4E2B7178E300769ADF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				BA622A552B717AC400769ADF /* Splash */,
 				BA585EEA2B725474009915C9 /* Home */,
 				BA622A442B7174BF00769ADF /* LaunchScreen.storyboard */,
 			);
-			path = Modules;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		BA622A4F2B71790900769ADF /* Resources */ = {
@@ -411,6 +423,7 @@
 				BA622A542B717A8E00769ADF /* AppCoordinator.swift in Sources */,
 				BA585EE42B723729009915C9 /* NetworkManager.swift in Sources */,
 				BA585ED92B719390009915C9 /* AppContainer.swift in Sources */,
+				BA585EFF2B728A68009915C9 /* HomeVMProtocols.swift in Sources */,
 				BA622A572B717AD400769ADF /* SplashVC.swift in Sources */,
 				BA585EEE2B725489009915C9 /* HomeVC.swift in Sources */,
 				BA622A3A2B7174BE00769ADF /* AppDelegate.swift in Sources */,
@@ -422,6 +435,9 @@
 				BA585E9E2B7184BF009915C9 /* RemoteConfigHelper.swift in Sources */,
 				BA585EF12B725539009915C9 /* HomeCoordinator.swift in Sources */,
 				BA622A3C2B7174BE00769ADF /* SceneDelegate.swift in Sources */,
+				BA585EFB2B728940009915C9 /* HomeRepository.swift in Sources */,
+				BA585F012B72C150009915C9 /* BaseResponse.swift in Sources */,
+				BA585EFD2B728A61009915C9 /* HomeVM.swift in Sources */,
 				BA622A522B717A0B00769ADF /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
