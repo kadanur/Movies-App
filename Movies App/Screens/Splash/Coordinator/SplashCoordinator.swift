@@ -21,7 +21,6 @@ final class SplashCoordinator: Coordinator {
         let vc: SplashVC = .instantiate()
         vc.coordinator = self
         vc.viewModel = SplashVM()
-        vc.isBackButtonHide = true
         rootViewController = vc
         
         navigationController.pushViewController(vc, animated: true)

@@ -28,7 +28,6 @@ final class HomeCoordinator: Coordinator {
         rootViewController = vc
         
         navigationController.pushViewController(vc, animated: true)
-        navigationController.viewControllers.removeAll(where: { !($0 is HomeVC) })
     }
     
     func navigateToMovieDetail(imdbId: String?) {

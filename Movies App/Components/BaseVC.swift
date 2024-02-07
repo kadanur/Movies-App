@@ -18,7 +18,7 @@ class BaseVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationItem.setHidesBackButton(isBackButtonHide, animated: true)
+        navigationItem.hidesBackButton = isBackButtonHide
     }
     
     func presentErrorAlert(message: String, isPop: Bool = false) {
@@ -62,14 +62,14 @@ private extension BaseVC {
         transparentView?.alpha = 0.3
         
         if let transparentView {
-            self.view.addSubview(transparentView)
+            view.addSubview(transparentView)
         }
         
         view.addSubview(activityIndicator)
     }
     
     func activityIndicatorEnd() {
-        self.activityIndicator.stopAnimating()
-        self.transparentView?.removeFromSuperview()
+        activityIndicator.stopAnimating()
+        transparentView?.removeFromSuperview()
     }
 }
