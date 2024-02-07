@@ -43,12 +43,18 @@ private extension MovieDetailVM {
                 if let error = response.error {
                     delegate?.handleVMOutput(.presentError(message: error))
                 } else {
+                    sendFirebaseEvent(movieTitle: response.title)
                     delegate?.handleVMOutput(.updateMovieDetail(response))
                 }
             case let .failure(error):
                 delegate?.handleVMOutput(.presentError(message: error.localizedDescription))
             }
         }
+    }
+    
+    func sendFirebaseEvent(movieTitle: String?) {
+        let parameters = ["title": movieTitle, "imbdId": imdbId] as? [String: Any]
+        delegate?.handleVMOutput(.sendAnalyticsEvent(name: "MovieDetail", parameters: parameters))
     }
     
     func showLoading(_ state: Bool) {

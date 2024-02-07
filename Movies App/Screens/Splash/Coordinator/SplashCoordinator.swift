@@ -11,6 +11,7 @@ final class SplashCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
+    var rootViewController: UIViewController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,6 +22,7 @@ final class SplashCoordinator: Coordinator {
         vc.coordinator = self
         vc.viewModel = SplashVM()
         vc.isBackButtonHide = true
+        rootViewController = vc
         
         navigationController.pushViewController(vc, animated: true)
     }

@@ -28,5 +28,5 @@ enum HomeVMOutput {
 
 enum HomeState {
     case info(info: String)
-    case list(movies: [SearchResult])
+    case list(movies: [Movie])
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct SearchResponse: BaseResponse, Decodable {
-    let results: [SearchResult]?
+    let results: [Movie]?
     var error: String?
     var response: String?
     
@@ -19,7 +19,7 @@ struct SearchResponse: BaseResponse, Decodable {
     }
 }
 
-struct SearchResult: Decodable {
+struct Movie: Decodable {
     let title: String?
     let year: String?
     let imdbId: String?

@@ -5,6 +5,7 @@
 //  Created by M Kaan Adanur on 6.02.2024.
 //
 
+import FirebaseAnalytics
 import UIKit
 
 class BaseVC: UIViewController {
@@ -40,6 +41,13 @@ class BaseVC: UIViewController {
     func showLoading(_ state: Bool) {
         state ? activityIndicatorBegin() : activityIndicatorEnd()
     }
+    
+    func sendAnalyticsEvent(name: String, parameters: [String: Any]? = nil) {
+        Analytics.logEvent(name, parameters: parameters)
+    }
+}
+
+private extension BaseVC {
     
     func activityIndicatorBegin() {
         activityIndicator = UIActivityIndicatorView(frame: .init(x: 0, y: 0, width: 100, height: 100))

@@ -12,7 +12,7 @@ final class HomeVC: BaseVC {
     @IBOutlet private weak var tableView: UITableView!
     
     private var state: HomeState = .info(info: "Please, search for movies.")
-    private var movies: [SearchResult] = []
+    private var movies: [Movie] = []
     private var timer: Timer?
     
     weak var coordinator: HomeCoordinator?
@@ -42,8 +42,8 @@ final class HomeVC: BaseVC {
 private extension HomeVC {
     
     func registerCells() {
-        let nib = UINib(nibName: "MovieCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "MovieCell")
+        let nib = UINib(nibName: MovieCell.className, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: MovieCell.className)
     }
     
     func setupSearchController() {
@@ -67,7 +67,7 @@ private extension HomeVC {
         tableView.reloadData()
     }
     
-    func didTapMovie(_ movie: SearchResult) {
+    func didTapMovie(_ movie: Movie) {
         coordinator?.navigateToMovieDetail(imdbId: movie.imdbId)
     }
     
@@ -99,7 +99,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .list:
             guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: "MovieCell") as? MovieCell else { return .init() }
+                .dequeueReusableCell(withIdentifier: MovieCell.className) as? MovieCell else { return .init() }
             cell.selectionStyle = .none
             cell.movie = movies[indexPath.row]
             

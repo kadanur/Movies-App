@@ -15,9 +15,9 @@ final class MovieCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var yearLabel: UILabel!
     
-    var onTapAction: ((_ movie: SearchResult) -> Void)?
+    var onTapAction: ((_ movie: Movie) -> Void)?
     
-    var movie: SearchResult? {
+    var movie: Movie? {
         didSet {
             updateUI()
         }

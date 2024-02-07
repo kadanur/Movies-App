@@ -19,9 +19,11 @@ protocol RemoteConfigHelperProtocol {
 
 final class RemoteConfigHelper: RemoteConfigHelperProtocol {
     
+    static let shared: RemoteConfigHelperProtocol = RemoteConfigHelper()
+    
     private let remoteConfig = RemoteConfig.remoteConfig()
-
-    init() {
+    
+    private init() {
         setupSettings()
     }
     

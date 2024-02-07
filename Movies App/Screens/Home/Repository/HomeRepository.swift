@@ -16,6 +16,12 @@ protocol HomeRepositoryProtocol {
 
 final class HomeRepository: HomeRepositoryProtocol {
     
+    private let networkManager: NetworkManagerProtocol
+    
+    init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
+    }
+    
     func fetchMovies(
         searchText title: String,
         completion: @escaping (Result<SearchResponse, Error>) -> Void

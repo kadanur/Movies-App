@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA17161E2B736CDD0078FC4D /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA17161D2B736CDD0078FC4D /* NSObject+Extension.swift */; };
 		BA585E912B718341009915C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA585E902B718341009915C9 /* GoogleService-Info.plist */; };
 		BA585E9E2B7184BF009915C9 /* RemoteConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585E9D2B7184BF009915C9 /* RemoteConfigHelper.swift */; };
 		BA585EA12B718756009915C9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA585EA02B718756009915C9 /* FirebaseAnalytics */; };
@@ -36,7 +37,6 @@
 		BA585ED12B718756009915C9 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA585ED02B718756009915C9 /* FirebaseRemoteConfigSwift */; };
 		BA585ED32B718756009915C9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA585ED22B718756009915C9 /* FirebaseStorage */; };
 		BA585ED52B718756009915C9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BA585ED42B718756009915C9 /* FirebaseStorageCombine-Community */; };
-		BA585ED92B719390009915C9 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585ED82B719390009915C9 /* AppContainer.swift */; };
 		BA585EDC2B719456009915C9 /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDB2B719456009915C9 /* SplashVM.swift */; };
 		BA585EDE2B71945F009915C9 /* SplashVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */; };
 		BA585EE12B723046009915C9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA585EE02B723046009915C9 /* BaseVC.swift */; };
@@ -77,9 +77,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA17161C2B7364890078FC4D /* Movies App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Movies App.entitlements"; sourceTree = "<group>"; };
+		BA17161D2B736CDD0078FC4D /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		BA585E902B718341009915C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA585E9D2B7184BF009915C9 /* RemoteConfigHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigHelper.swift; sourceTree = "<group>"; };
-		BA585ED82B719390009915C9 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		BA585EDB2B719456009915C9 /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		BA585EDD2B71945F009915C9 /* SplashVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVMProtocols.swift; sourceTree = "<group>"; };
 		BA585EE02B723046009915C9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -298,6 +299,7 @@
 		BA622A382B7174BE00769ADF /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				BA17161C2B7364890078FC4D /* Movies App.entitlements */,
 				BA585E902B718341009915C9 /* GoogleService-Info.plist */,
 				BA622A4D2B7178D700769ADF /* App */,
 				BA585EDF2B723035009915C9 /* Components */,
@@ -314,7 +316,6 @@
 		BA622A4D2B7178D700769ADF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				BA585ED82B719390009915C9 /* AppContainer.swift */,
 				BA622A532B717A8E00769ADF /* AppCoordinator.swift */,
 				BA622A392B7174BE00769ADF /* AppDelegate.swift */,
 				BA622A3B2B7174BE00769ADF /* SceneDelegate.swift */,
@@ -367,6 +368,7 @@
 			children = (
 				BA622A5B2B717B3800769ADF /* UIViewController+Extension.swift */,
 				BA585F222B72F72C009915C9 /* UIColor+Extension.swift */,
+				BA17161D2B736CDD0078FC4D /* NSObject+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,13 +496,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA17161E2B736CDD0078FC4D /* NSObject+Extension.swift in Sources */,
 				BA585F1F2B72E086009915C9 /* MovieDetailVM.swift in Sources */,
 				BA585F122B72DD60009915C9 /* MovieDetailVC.swift in Sources */,
 				BA622A5C2B717B3800769ADF /* UIViewController+Extension.swift in Sources */,
 				BA585EDC2B719456009915C9 /* SplashVM.swift in Sources */,
 				BA622A542B717A8E00769ADF /* AppCoordinator.swift in Sources */,
 				BA585EE42B723729009915C9 /* NetworkManager.swift in Sources */,
-				BA585ED92B719390009915C9 /* AppContainer.swift in Sources */,
 				BA585F152B72DD99009915C9 /* MovieDetailCoordinator.swift in Sources */,
 				BA585EFF2B728A68009915C9 /* HomeVMProtocols.swift in Sources */,
 				BA622A572B717AD400769ADF /* SplashVC.swift in Sources */,
@@ -664,6 +666,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Movies App/Movies App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3A8H2GTC36;
@@ -673,6 +676,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -695,6 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Movies App/Movies App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3A8H2GTC36;
@@ -704,6 +709,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

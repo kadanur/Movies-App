@@ -23,7 +23,7 @@ private extension SplashVM {
     
     func fetchRemoteConfig() {
         showLoading(true)
-        remoteConfig.fetchCloudValues { [weak self] result in
+        RemoteConfigHelper.shared.fetchCloudValues { [weak self] result in
             guard let self else { return }
             
             showLoading(false)
@@ -39,7 +39,7 @@ private extension SplashVM {
     }
     
     func updateSplashLabel() {
-        guard let text = remoteConfig.getStringValue(forKey: .splashTitle) else { return }
+        guard let text = RemoteConfigHelper.shared.getStringValue(forKey: .splashTitle) else { return }
         delegate?.handleVMOutput(.updateSplashTitle(text: text))
     }
     

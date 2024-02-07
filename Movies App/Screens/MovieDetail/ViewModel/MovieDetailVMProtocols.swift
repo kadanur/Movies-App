@@ -23,6 +23,7 @@ enum MovieDetailVMInput {
 
 enum MovieDetailVMOutput {
     case updateMovieDetail(MovieDetail)
+    case sendAnalyticsEvent(name: String, parameters: [String: Any]?)
     case presentError(message: String)
     case showLoading(Bool)
 }

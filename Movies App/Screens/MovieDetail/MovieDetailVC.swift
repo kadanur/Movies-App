@@ -80,6 +80,8 @@ extension MovieDetailVC: MovieDetailVMDelegate {
         switch output {
         case let .updateMovieDetail(movieDetail):
             self.movieDetail = movieDetail
+        case let .sendAnalyticsEvent(name, parameters):
+            sendAnalyticsEvent(name: name, parameters: parameters)
         case let .presentError(message):
             presentErrorAlert(message: message, isPop: true)
         case let .showLoading(state):

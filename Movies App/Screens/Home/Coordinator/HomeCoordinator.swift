@@ -11,6 +11,7 @@ final class HomeCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
+    var rootViewController: UIViewController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -18,9 +19,13 @@ final class HomeCoordinator: Coordinator {
     
     func start() {
         let vc: HomeVC = .instantiate()
+        let repository = HomeRepository(networkManager: NetworkManager())
+        let viewModel = HomeVM(repository: repository)
+        
         vc.coordinator = self
-        vc.viewModel = HomeVM(repository: HomeRepository())
+        vc.viewModel = viewModel
         vc.isBackButtonHide = true
+        rootViewController = vc
         
         navigationController.pushViewController(vc, animated: true)
         navigationController.viewControllers.removeAll(where: { !($0 is HomeVC) })

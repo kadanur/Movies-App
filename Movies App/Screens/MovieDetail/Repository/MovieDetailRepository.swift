@@ -16,6 +16,12 @@ protocol MovieDetailRepositoryProtocol {
 
 final class MovieDetailRepository: MovieDetailRepositoryProtocol {
     
+    private let networkManager: NetworkManagerProtocol
+    
+    init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
+    }
+    
     func fetchMovieDetail(
         imdbId: String,
         completion: @escaping (Result<MovieDetail, Error>) -> Void
